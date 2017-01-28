@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      [aria-hidden="true"] {
+        display: none;
+      }
+
+      [aria-hidden="false"] {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-toggle="tab">
+      <button data-tab="featured">Featured</button>
+      <button data-tab="new">New</button>
+    </div>
+    <div data-game-category-group="12345"/>
+      <div data-panel="featured" data-game-category="featured" aria-hidden="false">
+        Featured
+      </div>
+      <div data-panel="new" data-game-category="new" aria-hidden="true">
+        New
+      </div>
+    </div>
+    <script>
+      if (navigator.serviceWorker) {
+        console.log('Suports service worker');
+        navigator.serviceWorker.register('sw.js').then(function () {
+          console.log('Registration worked!');
+        }).catch(function () {
+          console.log('Registration failed!');
+        });
+      }
+    </script>
+    <script src="dist/main.js"></script>
+  </body>
+</html>

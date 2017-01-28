@@ -1,0 +1,20 @@
+{
+  "name": "game-service-worker-caching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build | nodemon server.js",
+    "build": "rollup -c -w rollup.config.js -i ./public/main.js -o ./public/dist/main.js"
+  },
+  "author": "Connor Smallman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^2.0.0"
+  }
+}
